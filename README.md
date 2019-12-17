@@ -8,7 +8,7 @@ Inflearn 스프링 REST API 강의 정리
   * 인터넷 상의 시스템 간의 상호 운용성(interoperability)을 제공하는 방법중 하나
   * 시스템 제각각의 **독립적인 진화**를 보장하기 위한 방법
   * REST API : REST 아키텍처 스타일을 따르는 API
-* REST 아키텍처 스타일 [그런 REST API로 괜찮은가]("https://www.youtube.com/watch?v=RP_f5dMoHFc")
+* REST 아키텍처 스타일 [그런 REST API로 괜찮은가](https://www.youtube.com/watch?v=RP_f5dMoHFc)
   * Client-Server
   * Stateless
   * Cache
