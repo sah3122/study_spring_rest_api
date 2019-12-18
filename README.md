@@ -37,4 +37,20 @@ Inflearn 스프링 REST API 강의 정리
   * 방법 1 : 데이터에 링크 제공
     * 링크를 어떻게 정의 할 것인가 ? : HAL
   * 방법 2 : 링크 헤더나 Location을 제공
+* 프로젝트 세팅
+    * 의존성
+        * Web
+        * JPA
+        * HATEOAS
+        * REST Docs
+        * H2
+        * PostgreSQL
+        * Lombok
+    * 자바 버전 11
+    * 스프링 부트 핵심 원리
+        * 의존성 설정 (pom.xml)
+        * 자동 설정 (@EnableAutoConfiguration)
+        * 내장 웹 서버 (의존성과 자동 설정의 일부)
+        * 독립적으로 실행 가능한 JAR (pom.xml 의 플러그인)
+    
 
