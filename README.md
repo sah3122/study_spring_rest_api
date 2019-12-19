@@ -61,5 +61,28 @@ Inflearn 스프링 REST API 강의 정리
     * @Data를 쓰지 않는 이유
         * @Data를 사용할 경우 모든 필드를 참조하는 hashcode및 tostring이 자동으로 설정되기 때문
     * Lombok 애노테이션은 meta 애노테이션이 아니기 때문에 줄여서 사용할 수 없다.
-    
-
+* Event 생성 API 구현 : 비지니스 로직
+    * Event 생성 API
+        * 입력
+            * name
+            * description
+            * deginEnrollmentDatetime
+            * closeEnrollmentDateTime
+            * beginEventDateTime
+            * endEventDateTime
+            * location (optional) 없으면 온라인 모임    
+            * basePrice (optional)
+            * maxPrice (optional)
+            * limitOfEnrollment
+        * 결과
+            * id
+            * ...
+            * eventStatus : DRAFE, PUBLISHED, ENROLLMENT_STARTED, ...
+            * offline
+            * free
+            * _links
+                * profile (for the self-descriptive message)
+                * self
+                * publish 
+                * ...
+        
