@@ -52,5 +52,14 @@ Inflearn 스프링 REST API 강의 정리
         * 자동 설정 (@EnableAutoConfiguration)
         * 내장 웹 서버 (의존성과 자동 설정의 일부)
         * 독립적으로 실행 가능한 JAR (pom.xml 의 플러그인)
+* Event 도메인 구현
+    * @EqualsAndHashCode에서 of를 사용하는 이유
+        * 모든 필드를 검사할 경우 상호 참초가 일어날 가능성이 존재
+    * @Builder를 사용할 때 @AllArgumentsConstructor를 사용하는 이유
+        * 모든 필드를 사진 생성자가 public이 아니기 떄문.
+        * java bean spec 을 만족하기 위해 기본 생성자도 추가.
+    * @Data를 쓰지 않는 이유
+        * @Data를 사용할 경우 모든 필드를 참조하는 hashcode및 tostring이 자동으로 설정되기 때문
+    * Lombok 애노테이션은 meta 애노테이션이 아니기 때문에 줄여서 사용할 수 없다.
     
 
