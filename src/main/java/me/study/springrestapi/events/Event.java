@@ -2,13 +2,16 @@ package me.study.springrestapi.events;
 
 import lombok.*;
 
+import javax.persistence.*;
 import java.time.LocalDateTime;
 
 @Builder @NoArgsConstructor
 @AllArgsConstructor @Getter
 @Setter @EqualsAndHashCode(of = "id")// 기본적으로 모든 필드를 확인한다. 추후 연관관계가 들어가면 stack overflow가 일어날 수도 있다.
+@Entity
 public class Event {
 
+    @Id @GeneratedValue
     private Integer id;
     private String name;
     private String description;
@@ -22,6 +25,7 @@ public class Event {
     private int limitOfEnrollment;
     private boolean offline;
     private boolean free;
+    @Enumerated(EnumType.STRING)
     private EventStatus eventStatus = EventStatus.DRAFT;
 
 
