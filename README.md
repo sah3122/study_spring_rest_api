@@ -153,4 +153,9 @@ Inflearn 스프링 REST API 강의 정리
         * 테스트 할 것
             * 입력값으로 누가 id나 eventStatus, offline, free이런 데이터까지 같이 주면 ?
                 * Bad_Request 응답 vs 값 무시
+    * 입력값 이외에 에러 발생
+        * ObjectMapper 커스터마이징
+        * 테스트 할 것
+            * 입력값으로 Dto에 정의되어 있지 않은 값을 주면
+                * Bad_Request 응답 또는 받기로 한 값 무시.
             
