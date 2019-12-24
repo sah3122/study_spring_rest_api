@@ -159,4 +159,14 @@ Inflearn 스프링 REST API 강의 정리
         * 테스트 할 것
             * 입력값으로 Dto에 정의되어 있지 않은 값을 주면
                 * Bad_Request 응답 또는 받기로 한 값 무시.
-            
+    * Bad Request 처리하기
+        * @Valid와 BindingResult (또는 Errors)
+            * BindingResult는 항상 @Valid 바로 다음 인자로 사용해야한다. (스프링 MVC)
+            * @NotNull @NotEmpty @Min @Max 사용해서 입력값 바인딩할 때 에러 확인할 수 있음
+        * 도메인 Validator 만들기
+            * Validator 인터페이스 사용하기
+            * 없이 만들어도 상관없음
+        * 테스트 설명 용 인터페이스 만들기
+            * @Target @Retention
+        * 테스트 할 것
+            * 입력 데이터가 이상한 경우 Bad_Request로 응답
