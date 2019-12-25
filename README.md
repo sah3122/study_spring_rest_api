@@ -170,3 +170,16 @@ Inflearn 스프링 REST API 강의 정리
             * @Target @Retention
         * 테스트 할 것
             * 입력 데이터가 이상한 경우 Bad_Request로 응답
+    * Bad Request 응답 본문 만들기
+        * 커스텀 JSON Serializer 만들기 
+            * extends JsonSerializer<T> (Jackson JSON 제공) 
+                * 해당 클래스를 상속받아 Serializer로 등록 해두면 등록한 타입을 Serialize할때 자동으로 사용한다.
+            * @JsonComponent (스프링 부트 제공)
+        * BindingError
+            * FieldError 와 GlobalError (ObjectError)가 있음
+            * objectName
+            * defaultMessage
+            * code
+            * field
+            * rejectedValue
+            
