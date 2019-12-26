@@ -36,7 +36,7 @@ public class Event {
             this.free = false;
         }
 
-        if (this.location == null || this.location.isBlank()) {
+        if (this.location == null || this.location.isBlank()) { // java 11 version에 생긴 빈 문자열 판단 함수
             this.offline = false;
         } else {
             this.offline = true;
