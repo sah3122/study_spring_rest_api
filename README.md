@@ -246,4 +246,14 @@ Inflearn 스프링 REST API 강의 정리
             * RestDocsMockMvcConfigurationDustomizer 구현한 빈 등록
             * @TestConfiguration 
             * @Import
+    * 스프링 REST Docs : 링크, (Req, Res) 필드와 헤더 문서화
+        * 요청 필드 문서화
+            * requestFields() + fieldWithPath()
+            * responseFields() + fieldWithPath()
+            * requestHeaders() + headerWithName()
+            * responseHeaders() + headerWithName()
+            * links() + linkWithRel()
+        * Relaxed 접두어
+            * 장점 : 문서일부분만 테스트 할 수 있다.
+            * 단점 : 정확한 문서를 생성하지 못한다.
     
