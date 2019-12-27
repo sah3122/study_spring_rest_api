@@ -200,4 +200,10 @@ Inflearn 스프링 REST API 강의 정리
                 * profile
                 * update-event
                 * query-event
+    * 스프링 HATEOAS 적용
+        * EventResource 만들기
+            * extends ResourceSupport -> RepresentaionModel의 문제
+                * JsonUnwrapped 로 해결
+                * extends EntityModel로 해결
+                
     
