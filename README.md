@@ -239,4 +239,11 @@ Inflearn 스프링 REST API 강의 정리
     * RestDockMockMvc 커스터마이징
         * RestDocsMockMvcConfigurationCustomizer 구현한 빈 등록
         * @TestConfiguration
+    * 스프링 REST Docs 적용
+        * REST Docs 자동 설정
+            * @AutoConfigureRestDocs
+        * RestDocsMockMvc 커스터마이징 // Request, Response Pretty
+            * RestDocsMockMvcConfigurationDustomizer 구현한 빈 등록
+            * @TestConfiguration 
+            * @Import
     
