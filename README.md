@@ -205,5 +205,38 @@ Inflearn 스프링 REST API 강의 정리
             * extends ResourceSupport -> RepresentaionModel의 문제
                 * JsonUnwrapped 로 해결
                 * extends EntityModel로 해결
-                
+* 스프링 REST Docs 소개
+    * REST Docs 자동 설정
+        * @AutoConfigureRestDocs
+    * REST Docs 코딩
+        * andDo(document("doc-name", snippets))
+        * snippets
+            * links()
+            * requestParameters() + parameterWithName()
+            * pathParameters() + parametersWithName()
+            * requestParts() + partWithname()
+            * requestPartBody()
+            * requestPartFields()
+            * requestHeaders() + headerWithName()
+            * requestFields() + fieldWithPath()
+            * responseHeaders() + headerWithName()
+            * responseFields() + fieldWithPath()
+            * ...
+        * Relaxed
+        * Processor
+            * preprocessRequest(prettyPrint())
+            * preprocessResponse(prettyPrint())
+            * ...
+    * 문서 생성하기
+        * mvn package
+            * test
+            * prepare-package :: process-asciidoc
+            * prepare-package :: copy-resources
+        * 문서 확인
+            * /docs/index.html
+    * Constraint
+        * https://github.com/spring-projects/spring-restdocs/blob/v2.0.2.RELEASE/samples/rest-notes-spring-hateoas/src/test/java/com/example/notes/ApiDocumentation.java
+    * RestDockMockMvc 커스터마이징
+        * RestDocsMockMvcConfigurationCustomizer 구현한 빈 등록
+        * @TestConfiguration
     
