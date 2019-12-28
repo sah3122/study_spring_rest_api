@@ -1,7 +1,5 @@
 package me.study.springrestapi.events;
 
-import junitparams.JUnitParamsRunner;
-import junitparams.Parameters;
 import org.junit.jupiter.api.Test;
 import org.junit.runner.RunWith;
 import org.junit.runners.Parameterized;
@@ -33,7 +31,7 @@ class EventTest {
     }
 
     @Test
-    public void testFree(int basePrice, int maxPrice, boolean isFree) {
+    public void testFree() {
         // given
         Event event = Event.builder()
                 .basePrice(0)

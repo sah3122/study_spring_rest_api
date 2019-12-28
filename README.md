@@ -256,4 +256,18 @@ Inflearn 스프링 REST API 강의 정리
         * Relaxed 접두어
             * 장점 : 문서일부분만 테스트 할 수 있다.
             * 단점 : 정확한 문서를 생성하지 못한다.
+    * 문서 빌드
+        * 스프링 REST Docs
+            * https://docs.spring.io/spring-restdocs/docs/2.0.2.RELEASE/reference/html5/
+            * pom.xml에 메이븐 플러그인 설정
+        * 템플릿 파일 추가
+            * src/main/asciidoc/index.adoc
+        * 문서 생성하기
+            * mvn package
+                * test
+                * prepare-package :: process-asciidoc
+                * prepare-package :: copy-resources
+        * 문서 확인
+            * /docs/index.html
+
     
