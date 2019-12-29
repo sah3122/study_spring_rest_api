@@ -269,5 +269,10 @@ Inflearn 스프링 REST API 강의 정리
                 * prepare-package :: copy-resources
         * 문서 확인
             * /docs/index.html
+* PostgreSQL 적용
+    * 테스트 할 때는 H2 사용, 실제 애플리케이션 서버를 실행할 때 PostgreSQL을 사용하도록 변경.
+    * 애플리케이션 설정과 테스트 설정 중복 어떻게 줄일 것인가?
+        * 프로파일과 @ActiveProfiles 활용
+
 
     
