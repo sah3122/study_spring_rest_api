@@ -276,6 +276,16 @@ Inflearn 스프링 REST API 강의 정리
 * 인덱스 핸들러 만들기
     * 다른 리소스에 대한 링크 제공
     * 문서화
+* Event 목록 조회 API
+    * 페이징, 정렬 
+        * 스프링 데이터 JPA가 제공하는 Pageable
+    * Page<Event> 안에 들어있는 Event들은 리소스로 어떻게 변경 ?
+        * 하나씩 순회하면서 직접 EventResource로 맵핑?
+        * PageResourceAssembler<T> 사용
+    * 테스트 시 Pageable 파라미터 제공법
+        * page : 0부터 시작
+        * size : 기본값 20
+        * sort : property,property(,ASC|DESC)
     
 
 
