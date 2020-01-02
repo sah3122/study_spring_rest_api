@@ -286,6 +286,8 @@ Inflearn 스프링 REST API 강의 정리
         * page : 0부터 시작
         * size : 기본값 20
         * sort : property,property(,ASC|DESC)
+    * 1건 조회 API 추가.
+        * 조회 대상이 없을시 NotFound Return    
     
 
 
