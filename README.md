@@ -292,7 +292,20 @@ Inflearn 스프링 REST API 강의 정리
     * 여러 컨트롤러 간의 중복 코드 제거
         * 클래스 상속 사용
         * @Ignore 애노테이션으로 테스트로 간주되지 않도록 설정
-    
+* Account 도메인 추가
+    * OAuth2 인증을 하기위해 Account 생성
+        * id
+        * email
+        * password
+        * roles
+    * AccountRoles
+        * ADMIN, USER
+    * JPA enumeration collection mapping
+        ```java
+            @ElementCollection    
+            @Enumerated(EnumType.STRING)
+            private Set<AccountRole> roles;
+        ```
 
 
     

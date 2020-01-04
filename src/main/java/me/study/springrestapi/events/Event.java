@@ -1,6 +1,7 @@
 package me.study.springrestapi.events;
 
 import lombok.*;
+import me.study.springrestapi.accounts.Account;
 import org.springframework.hateoas.RepresentationModel;
 
 import javax.persistence.*;
@@ -28,6 +29,8 @@ public class Event {
     private boolean free;
     @Enumerated(EnumType.STRING)
     private EventStatus eventStatus = EventStatus.DRAFT;
+    @ManyToOne
+    private Account manager;
 
 
     public void update() {
