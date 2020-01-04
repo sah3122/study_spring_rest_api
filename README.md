@@ -288,6 +288,10 @@ Inflearn 스프링 REST API 강의 정리
         * sort : property,property(,ASC|DESC)
     * 1건 조회 API 추가.
         * 조회 대상이 없을시 NotFound Return    
+* 테스트 코드 리펙토링
+    * 여러 컨트롤러 간의 중복 코드 제거
+        * 클래스 상속 사용
+        * @Ignore 애노테이션으로 테스트로 간주되지 않도록 설정
     
 
 
