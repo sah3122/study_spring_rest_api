@@ -306,6 +306,10 @@ Inflearn 스프링 REST API 강의 정리
             @Enumerated(EnumType.STRING)
             private Set<AccountRole> roles;
         ```
-
+* 스프링 시큐리티
+    * 웹 시큐리티 (filter 기반 시큐리티)
+    * 메소드 시큐리티
+    * 이 둘 다 Security Interceptor를 사용
+        * 리소스에 접근을 허용할 것이냐 말것이냐 결정 로직이 들어있다.
 
     
