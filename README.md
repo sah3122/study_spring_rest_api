@@ -311,5 +311,10 @@ Inflearn 스프링 REST API 강의 정리
     * 메소드 시큐리티
     * 이 둘 다 Security Interceptor를 사용
         * 리소스에 접근을 허용할 것이냐 말것이냐 결정 로직이 들어있다.
-
-    
+* 예외 테스트
+    * @Test(expected)
+        * 예외 타입만 확인이 가능함.
+    * try-catch
+        * 예외 타입과 메시지 확인 가능 하지만 코드가 다소 복잡
+    * @Rule ExpectedException
+        * 코드는 간결하면서 예외 타입과 메시지 모두 확인 가능.
