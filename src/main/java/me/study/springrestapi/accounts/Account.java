@@ -1,7 +1,6 @@
 package me.study.springrestapi.accounts;
 
 import lombok.*;
-import org.springframework.data.annotation.Id;
 
 import javax.persistence.*;
 import java.util.Set;

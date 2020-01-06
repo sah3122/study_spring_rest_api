@@ -1,6 +1,6 @@
 package me.study.springrestapi.events;
 
-import lombok.*;
+import  lombok.*;
 import me.study.springrestapi.accounts.Account;
 import org.springframework.hateoas.RepresentationModel;
 
