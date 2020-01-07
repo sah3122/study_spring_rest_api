@@ -382,3 +382,17 @@ Inflearn 스프링 REST API 강의 정리
             * tokenStore
             * authenticationManager
             * userDetailsService
+* 스프링 시큐리티 OAuth2 설정 : 리소스 서버 설정
+    * 리소스서버는 API서버와 함께 있어야 하는게 맞다. 요청시에 토큰을 검사해야 하기 때문.
+    * ResourceServer 설정
+        * @EnableResourceServer
+        * extends ResourceServerConfigurerAdaptor
+        * configurer(ResourceServerSecurityConfigurer resources)
+            * 리소스 ID
+        * configurer(HttpSecurity http)
+            * anonymous
+            * GET /api/** permitAll()
+            * POST /api/** authenticated
+            * PUT /api/** authenticated
+            * 에러처리
+                * accessDeniedHandler(OAuth2AccessDeniedHandler())
