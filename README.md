@@ -318,3 +318,35 @@ Inflearn 스프링 REST API 강의 정리
         * 예외 타입과 메시지 확인 가능 하지만 코드가 다소 복잡
     * @Rule ExpectedException
         * 코드는 간결하면서 예외 타입과 메시지 모두 확인 가능.
+* 스프링시큐리티 기본 설정
+    * 시큐리티 필터 적용하지않음
+        * /docs/index.html
+    * 로그인 없이 접근 가능
+        * GET /api/events
+        * GET /api/events/{id}
+    * 로그인 해야 접근 가능
+        * 나머지
+        * POST /api/events
+        * PUT /api/events/{id}
+    * 스프링 시큐리티 OAuth2.0
+        * AuthorizationSever : OAuth2 토큰 발행(/oauth/token) 및 토큰 인증(/oauth/authorize)
+            * Order 0 (리소스 서버 보다 우선 순위가 높다)
+        * ResourceServer : 리소스 요청 인증 처리 (OAuth 2 토큰 검사)
+            * Order 3 (이 값은 현재 고칠 수 없음)
+    * 스프링 시큐리티 설정
+        * @EnableSebSecurity
+        * @EnableGlobalMethodSecurity
+        * extends WebSecurityConfigureAdaptor
+        * PasswordEncoder : PasswordEncoderFactories.createDelegatingPasswordEncoder()
+        * TokenStore : InmemoryTokenStore
+        * AuthenticationManagerBean
+        * configure(AuthenticationManagerBuilder auth)
+            * userDetailsService
+            * passwordEncoder
+        * configure(HttpSecurity http)
+            * /docs/** permitAll()
+        * configure(WebSecurity web)
+            * ignore
+                * /docs/**
+                * /favicon.ico
+        * PathRequest.toStaticResources() 사용하기
