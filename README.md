@@ -350,3 +350,35 @@ Inflearn 스프링 REST API 강의 정리
                 * /docs/**
                 * /favicon.ico
         * PathRequest.toStaticResources() 사용하기
+* 스프링 시큐리티 OAuth2 설정 : 인증서버 설정
+    * 토큰 발행 테스트
+        * User
+        * Client
+        * POST /oauth/token
+            * HTTO Basic 인증 헤더 (클라이언트 아이디 + 클라이언트 시크릿)
+            * 요청 매개변수
+                * grant_type : password
+                * username
+                * password
+            * 응답에 access_token 나오는지 확인
+    * Grant Type : password
+        * Grant Type : 토큰 받아오는 방법
+        * 서비스 오너가 만든 클라이언트에서 사용하는 Grant Type
+    * AuthorizationServer 설정
+        * @EnableAuthorizationServer
+        * extends AuthorizationServerCofingureAdaptor
+        * configure(AuthorizationServerSecurityConfigurer security)
+            * passwordEncode 설정
+        * configure(ClientDetailsServiceConfigurer clients)
+            * 클라이언트 설정
+            * grantTypes
+                * password
+                * refresh_token
+            * scopes
+            * secret / name
+            * accessTokenValiditySeconds
+            * refreshTokenValiditySeconds
+        * AuthorizationServerEndpointsConfigurer
+            * tokenStore
+            * authenticationManager
+            * userDetailsService
