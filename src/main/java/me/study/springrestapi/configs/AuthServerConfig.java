@@ -28,6 +28,9 @@ public class AuthServerConfig extends AuthorizationServerConfigurerAdapter {
     @Autowired
     TokenStore tokenStore;
 
+    @Autowired
+    AppProperties appProperties;
+
     @Override
     public void configure(AuthorizationServerSecurityConfigurer security) throws Exception {
         security.passwordEncoder(passwordEncoder); // Secret 설정시 인코딩 해서 관리.
@@ -36,10 +39,10 @@ public class AuthServerConfig extends AuthorizationServerConfigurerAdapter {
     @Override
     public void configure(ClientDetailsServiceConfigurer clients) throws Exception {
         clients.inMemory() // jdbc를 사용해 db에서 관리하는게 이상적이다.
-                .withClient("myApp") // Client Id
+                .withClient(appProperties.getClientId()) // Client Id
                 .authorizedGrantTypes("password", "refresh_token")//refresh_token을 받기위해
                 .scopes("read","write")
-                .secret(this.passwordEncoder.encode("pass")) // app secret
+                .secret(this.passwordEncoder.encode(appProperties.getClientSecret())) // app secret
                 .accessTokenValiditySeconds(10 * 60)
                 .refreshTokenValiditySeconds(6 * 10 * 60);
     }

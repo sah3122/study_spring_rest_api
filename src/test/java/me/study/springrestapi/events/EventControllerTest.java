@@ -8,6 +8,7 @@ import me.study.springrestapi.accounts.AccountService;
 import me.study.springrestapi.common.BaseControllerTest;
 import me.study.springrestapi.common.RestDocsConfiguration;
 import me.study.springrestapi.common.TestDescription;
+import me.study.springrestapi.configs.AppProperties;
 import org.hamcrest.Matchers;
 import org.junit.Before;
 import org.junit.Test;
@@ -59,6 +60,9 @@ public class EventControllerTest extends BaseControllerTest {
 
     @Autowired
     AccountRepository accountRepository;
+
+    @Autowired
+    AppProperties appProperties;
 
     @Before
     public void setUp() {
@@ -151,21 +155,17 @@ public class EventControllerTest extends BaseControllerTest {
 
     private String getAccessToken() throws Exception {
         //Given
-        String username = "dongchul2@email.com";
-        String password = "dongchul2";
         Account account = Account.builder()
-                .email(username)
-                .password(password)
+                .email(appProperties.getUserUsername())
+                .password(appProperties.getUserPassword())
                 .roles(Set.of(AccountRole.ADMIN, AccountRole.USER))
                 .build();
-        String clientId = "myApp";
-        String clientSecret = "pass";
 
         this.accountService.saveAccount(account);
         ResultActions perform = this.mockMvc.perform(post("/oauth/token")
-                .with(httpBasic(clientId, clientSecret))
-                .param("username", username)
-                .param("password", password)
+                .with(httpBasic(appProperties.getClientId(), appProperties.getClientSecret()))
+                .param("username", appProperties.getUserUsername())
+                .param("password", appProperties.getUserPassword())
                 .param("grant_type", "password"));
 
         var responseBody = perform.andReturn().getResponse().getContentAsString();

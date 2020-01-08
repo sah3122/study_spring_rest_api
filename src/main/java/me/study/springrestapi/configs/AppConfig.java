@@ -1,6 +1,7 @@
 package me.study.springrestapi.configs;
 
 import me.study.springrestapi.accounts.Account;
+import me.study.springrestapi.accounts.AccountRepository;
 import me.study.springrestapi.accounts.AccountRole;
 import me.study.springrestapi.accounts.AccountService;
 import org.modelmapper.ModelMapper;
@@ -32,14 +33,25 @@ public class AppConfig {
             @Autowired
             AccountService accountService;
 
+            @Autowired
+            AppProperties appProperties;
+
             @Override
             public void run(ApplicationArguments args) throws Exception {
-                Account dongchul = Account.builder()
-                        .email("dongchul@email.com")
-                        .password("dongchul")
+
+                Account admin = Account.builder()
+                        .email(appProperties.getAdminUsername())
+                        .password(appProperties.getAdminPassword())
                         .roles(Set.of(AccountRole.ADMIN, AccountRole.USER))
                         .build();
-                accountService.saveAccount(dongchul);
+                accountService.saveAccount(admin);
+
+                Account user = Account.builder()
+                        .email(appProperties.getUserUsername())
+                        .password(appProperties.getUserPassword())
+                        .roles(Set.of(AccountRole.USER))
+                        .build();
+                accountService.saveAccount(user);
             }
         };
     }

@@ -396,3 +396,6 @@ Inflearn 스프링 REST API 강의 정리
             * PUT /api/** authenticated
             * 에러처리
                 * accessDeniedHandler(OAuth2AccessDeniedHandler())
+* 외부 설정으로 기본 유저 및 클라이언트 정보 빼내기
+    * @ConfigurationProperties
+        * spring-boot-configuration-processor dependency 추가
