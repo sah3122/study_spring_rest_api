@@ -399,3 +399,22 @@ Inflearn 스프링 REST API 강의 정리
 * 외부 설정으로 기본 유저 및 클라이언트 정보 빼내기
     * @ConfigurationProperties
         * spring-boot-configuration-processor dependency 추가
+* 스프링 시큐리티 현재 사용자
+    * Securitycontext
+        * 자바 ThreadLocal 기반 구현으로 인증 정보를 담고 있다.
+        * 인증 정보 꺼내는 방법 :
+            * Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
+    * @AuthenticationPrincipal.spring.security.User.user
+        * 인증 안한 경우엔 null
+        * 인증 한 경우에는 username과 authorities 참조 가능
+    * spring.security.User를 상속 받는 클래스를 구현하면
+        * 도메인 User를 받을 수 있다.
+        * @AuthenticationPrincipal me.study.usesr.UserAdaptor
+        * Adaptor.getUser().getId()
+    * SpEL을 사용하면
+        * @AuthenticationPrincipal(expression="account") me.study.account.Account
+    * 커스텀 애노테이션을 만들면 
+        * @CurrentUser Account account
+        * 인증을 안하고 접근시 
+        * expression = '#this == 'anoymousUser' ? null : account'
+            * 현재 인증 정보가 anoymousUser인 경우엔 null 아닐시 account 리턴
