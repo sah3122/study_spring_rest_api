@@ -1,7 +1,9 @@
 package me.study.springrestapi.events;
 
+import com.fasterxml.jackson.databind.annotation.JsonSerialize;
 import  lombok.*;
 import me.study.springrestapi.accounts.Account;
+import me.study.springrestapi.accounts.AccountSerializer;
 import org.springframework.hateoas.RepresentationModel;
 
 import javax.persistence.*;
@@ -30,6 +32,7 @@ public class Event {
     @Enumerated(EnumType.STRING)
     private EventStatus eventStatus = EventStatus.DRAFT;
     @ManyToOne
+    @JsonSerialize(using = AccountSerializer.class)
     private Account manager;
 
 

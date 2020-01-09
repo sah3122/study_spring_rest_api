@@ -418,3 +418,8 @@ Inflearn 스프링 REST API 강의 정리
         * 인증을 안하고 접근시 
         * expression = '#this == 'anoymousUser' ? null : account'
             * 현재 인증 정보가 anoymousUser인 경우엔 null 아닐시 account 리턴
+* Event API 개선 : 출력값 제한하기
+    * JsonSerializer<User> 구현       
+    * @JsonSerialize(using) 설정
+        * @JsonCompponet 를 사용하지 않는다
+                            
